@@ -1,0 +1,519 @@
+/* ==========================================================================
+   GLOBAL STYLES, EDITORIAL TYPOGRAPHY & WRCO LAYOUT SYSTEM
+   ========================================================================== */
+
+@import './tokens.css';
+@import './components.css';
+
+/* --- CSS Reset --- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--md-sys-color-on-background);
+  min-height: 100vh;
+  overflow-x: hidden;
+  background-color: #0E1812;
+}
+
+/* Root Wallpaper Background from Firebase Storage with dark transparency */
+#root {
+  min-height: 100vh;
+  width: 100%;
+  background-color: #0A130E;
+  background-image:
+    linear-gradient(rgba(10, 19, 14, 0.50), rgba(10, 19, 14, 0.90)),
+    url('/background.jpeg');
+  background-size: cover;
+  background-position: center top;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Central Framed Canvas Container matching wrco.png */
+.site-wrapper {
+  max-width: 1320px;
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  background-color: var(--md-sys-color-background);
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(255, 255, 255, 0.08);
+  min-height: 100vh;
+  position: relative;
+}
+
+/* --- Typography --- */
+h1,
+h2,
+h3,
+.font-serif {
+  font-family: var(--font-serif-display);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.font-serif-body {
+  font-family: var(--font-serif-body);
+}
+
+.text-gold {
+  color: var(--md-sys-color-secondary);
+}
+
+.text-primary {
+  color: var(--md-sys-color-primary);
+}
+
+.text-muted {
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* --- Layout Containers --- */
+.container {
+  width: 100%;
+  max-width: var(--container-max-width);
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section-padding {
+  padding: 96px 0;
+}
+
+.section-padding-sm {
+  padding: 56px 0;
+}
+
+/* --- Navigation Header --- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  transition: all var(--duration-medium) ease;
+  background: rgba(15, 26, 20, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--header-height);
+  padding: 0 32px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+}
+
+.nav-link {
+  color: rgba(255, 255, 255, 0.82);
+  text-decoration: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: color var(--duration-short) ease;
+  position: relative;
+  padding: 4px 0;
+}
+
+.nav-link:hover {
+  color: #FFFFFF;
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--md-sys-color-secondary);
+  transition: width var(--duration-short) ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.brand-logo {
+  font-family: 'Italiana', 'Playfair Display', serif;
+  font-size: 1.5rem;
+  font-style: italic;
+  letter-spacing: 0.04em;
+  color: #FAF8F4;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* --- Hero Section matching wrco.png --- */
+.hero-wrapper {
+  position: relative;
+  background-color: #0E1812;
+  color: #FFFFFF;
+  overflow: hidden;
+  padding-top: 48px;
+  padding-bottom: 0px;
+}
+
+.hero-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 70% 30%, rgba(35, 72, 50, 0.45) 0%, transparent 60%),
+    linear-gradient(180deg, rgba(14, 24, 18, 0.3) 0%, rgba(14, 24, 18, 0.95) 100%);
+  pointer-events: none;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  padding-bottom: 60px;
+}
+
+.hero-copy-card {
+  max-width: 480px;
+  margin-left: auto;
+  text-align: left;
+}
+
+.hero-quote {
+  font-family: var(--font-serif-display);
+  font-size: 1.75rem;
+  font-style: italic;
+  line-height: 1.3;
+  color: #FAF8F4;
+  margin-bottom: 18px;
+}
+
+.hero-desc {
+  font-size: 0.9375rem;
+  line-height: 1.68;
+  color: rgba(255, 255, 255, 0.78);
+  margin-bottom: 28px;
+}
+
+/* Giant Monumental Banner Typography Overlap matching wrco.png */
+.hero-monumental-banner {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+  text-align: center;
+  line-height: 0.85;
+  overflow: hidden;
+  user-select: none;
+  padding: 10px 0 20px 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  background: linear-gradient(180deg, transparent 0%, rgba(14, 24, 18, 0.9) 100%);
+}
+
+.hero-monumental-title {
+  font-family: var(--font-serif-display);
+  font-size: clamp(3.2rem, 9.5vw, 5.8rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.95);
+  text-transform: uppercase;
+  text-shadow: 0 4px 30px rgba(0, 0, 0, 0.6);
+  white-space: nowrap;
+}
+
+/* --- Section: "HOW THE BOOK SHATTERS HISTORY" (3-Column) matching wrco.png --- */
+.discoveries-section {
+  background-color: var(--md-sys-color-background);
+  text-align: center;
+  position: relative;
+}
+
+.section-headline-serif {
+  font-family: var(--font-serif-display);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 56px;
+}
+
+.three-column-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+  text-align: center;
+}
+
+.column-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.column-check-icon {
+  width: 32px;
+  height: 32px;
+  color: var(--md-sys-color-primary);
+  margin-bottom: 24px;
+}
+
+.column-title {
+  font-family: var(--font-serif-display);
+  font-size: 1.45rem;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 16px;
+  line-height: 1.25;
+}
+
+.column-text {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* --- Section: "THE REVELATIONS / INCLUDES" (Split layout) matching wrco.png --- */
+.revelations-section {
+  background-color: var(--md-sys-color-surface-container-low);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.split-layout-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+}
+
+.checklist-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 32px 0 40px 0;
+}
+
+.checklist-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.checklist-item:first-child {
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+}
+
+.checklist-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  color: var(--md-sys-color-primary);
+  margin-top: 2px;
+}
+
+.checklist-content h4 {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 4px;
+}
+
+.checklist-content p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* Editorial Photography Framing */
+.editorial-image-frame {
+  position: relative;
+  border-radius: var(--md-shape-extra-large);
+  overflow: hidden;
+  box-shadow: var(--md-sys-elevation-3);
+  aspect-ratio: 4/5;
+  background-color: #12241b;
+}
+
+.editorial-image-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
+}
+
+.editorial-image-frame:hover img {
+  transform: scale(1.03);
+}
+
+/* --- Review Carousel & Masonry Section --- */
+.reviews-section {
+  background-color: var(--md-sys-color-background);
+}
+
+.review-card {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 220px;
+}
+
+.star-row {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  color: #C89745;
+  margin-bottom: 14px;
+}
+
+.review-headline {
+  font-family: var(--font-serif-display);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--md-sys-color-on-surface);
+  margin-bottom: 10px;
+}
+
+.review-body {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--md-sys-color-on-surface-variant);
+  margin-bottom: 20px;
+  flex-grow: 1;
+}
+
+.reviewer-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  color: var(--md-sys-color-outline);
+  border-top: 1px solid var(--md-sys-color-outline-variant);
+  padding-top: 14px;
+}
+
+/* --- Pricing / Editions Grid --- */
+.editions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 28px;
+  margin-top: 48px;
+}
+
+.edition-card {
+  padding: 32px 24px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.edition-card.popular {
+  border: 2px solid var(--md-sys-color-secondary);
+  box-shadow: var(--md-sys-elevation-3);
+}
+
+/* --- FAQ Accordion --- */
+.faq-list {
+  max-width: 800px;
+  margin: 40px auto 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  border: 1px solid var(--md-sys-color-outline-variant);
+  border-radius: var(--md-shape-large);
+  background-color: var(--md-sys-color-surface-bright);
+  overflow: hidden;
+  transition: all var(--duration-short) ease;
+}
+
+.faq-question {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px;
+  background: none;
+  border: none;
+  text-align: left;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--md-sys-color-on-surface);
+  cursor: pointer;
+}
+
+.faq-answer {
+  padding: 0 24px 24px 24px;
+  font-size: 0.9375rem;
+  line-height: 1.65;
+  color: var(--md-sys-color-on-surface-variant);
+}
+
+/* --- Footer --- */
+.site-footer {
+  background-color: #0A130E;
+  color: rgba(255, 255, 255, 0.75);
+  padding: 80px 0 40px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* --- Responsive Media Queries --- */
+@media (max-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-copy-card {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .three-column-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .split-layout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .section-padding {
+    padding: 64px 0;
+  }
+}

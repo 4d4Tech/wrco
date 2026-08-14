@@ -1,0 +1,35 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Reviews Collection: Public read, public create with validation
+    match /reviews/{reviewId} {
+      allow read: if true;
+      allow create: if request.resource.data.text is string 
+                    && request.resource.data.text.size() > 0
+                    && request.resource.data.rating is number
+                    && request.resource.data.rating >= 1
+                    && request.resource.data.rating <= 5;
+      allow update, delete: if request.auth != null;
+    }
+    
+    // Orders Collection: Public create (during checkout), read/update restricted to admin or authenticated user
+    match /orders/{orderId} {
+      allow create: if request.resource.data.items is list
+                    && request.resource.data.pricing.total is number;
+      allow read, update: if request.auth != null;
+    }
+
+    // Inventory Collection: Public read (to show stock levels), update restricted or allowed for stock decrements
+    match /inventory/{docId} {
+      allow read: if true;
+      allow write: if true;
+    }
+
+    // Newsletter Collection: Public subscribe
+    match /newsletter/{subId} {
+      allow create: if request.resource.data.email is string;
+      allow read: if request.auth != null;
+    }
+  }
+}

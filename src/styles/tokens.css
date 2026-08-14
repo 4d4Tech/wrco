@@ -1,0 +1,92 @@
+/* ==========================================================================
+   GOOGLE MATERIAL 3 (M3) DESIGN TOKENS & HIGH-END EDITORIAL THEME
+   Tailored for "When Rocks Cry Out" based on wrco.png design reference
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Botanical Antiquity & Warm Stone */
+  --md-sys-color-primary: #173322;
+  --md-sys-color-on-primary: #FFFFFF;
+  --md-sys-color-primary-container: #234832;
+  --md-sys-color-on-primary-container: #D1EAD8;
+
+  --md-sys-color-secondary: #C89745;
+  --md-sys-color-on-secondary: #FFFFFF;
+  --md-sys-color-secondary-container: #F6E6C5;
+  --md-sys-color-on-secondary-container: #3A2A06;
+
+  --md-sys-color-tertiary: #A64B2A;
+  --md-sys-color-on-tertiary: #FFFFFF;
+  --md-sys-color-tertiary-container: #FFDBD1;
+  --md-sys-color-on-tertiary-container: #3B0900;
+
+  --md-sys-color-error: #BA1A1A;
+  --md-sys-color-on-error: #FFFFFF;
+  --md-sys-color-error-container: #FFDAD6;
+  --md-sys-color-on-error-container: #410002;
+
+  --md-sys-color-success: #1E7E34;
+  --md-sys-color-on-success: #FFFFFF;
+
+  /* Surfaces - Warm Architectural Parchment */
+  --md-sys-color-background: #FAF8F4;
+  --md-sys-color-on-background: #191C1A;
+  --md-sys-color-surface: #FAF8F4;
+  --md-sys-color-on-surface: #191C1A;
+  --md-sys-color-surface-dim: #DEDAD1;
+  --md-sys-color-surface-bright: #FEFDFB;
+  --md-sys-color-surface-container-lowest: #FFFFFF;
+  --md-sys-color-surface-container-low: #F4F1EA;
+  --md-sys-color-surface-container: #EFEBE2;
+  --md-sys-color-surface-container-high: #EAE4D9;
+  --md-sys-color-surface-container-highest: #E3DCCF;
+
+  /* Dark Theme Surfaces (Hero & Focus Panels) */
+  --md-sys-color-surface-dark: #0D1812;
+  --md-sys-color-surface-dark-container: #15241B;
+  --md-sys-color-on-surface-dark: #F3F1EC;
+  --md-sys-color-on-surface-dark-variant: #C0C8C1;
+
+  /* Outlines & Dividers */
+  --md-sys-color-outline: #74796D;
+  --md-sys-color-outline-variant: #D2CDBF;
+  --md-sys-color-surface-variant: #E3E0D4;
+  --md-sys-color-on-surface-variant: #43483E;
+
+  /* Shadows - Material 3 Elevation */
+  --md-sys-elevation-0: none;
+  --md-sys-elevation-1: 0px 1px 3px 1px rgba(0, 0, 0, 0.07), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-2: 0px 2px 6px 2px rgba(0, 0, 0, 0.08), 0px 1px 2px 0px rgba(0, 0, 0, 0.12);
+  --md-sys-elevation-3: 0px 4px 8px 3px rgba(0, 0, 0, 0.09), 0px 1px 3px 0px rgba(0, 0, 0, 0.14);
+  --md-sys-elevation-4: 0px 6px 12px 4px rgba(0, 0, 0, 0.10), 0px 2px 4px 0px rgba(0, 0, 0, 0.14);
+  --md-sys-elevation-5: 0px 8px 24px 6px rgba(0, 0, 0, 0.12), 0px 4px 8px 0px rgba(0, 0, 0, 0.15);
+
+  /* Typography Scales */
+  --font-serif-display: 'Italiana', 'Playfair Display', 'Cormorant Garamond', Georgia, serif;
+  --font-serif-body: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Corner Radii - M3 Shape System */
+  --md-shape-none: 0px;
+  --md-shape-extra-small: 4px;
+  --md-shape-small: 8px;
+  --md-shape-medium: 12px;
+  --md-shape-large: 16px;
+  --md-shape-extra-large: 28px;
+  --md-shape-full: 9999px;
+
+  /* Motion - M3 Standard & Emphasized Curves */
+  --md-motion-standard: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --md-motion-emphasized: cubic-bezier(0.2, 0.0, 0, 1.0);
+  --md-motion-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1.0);
+  --md-motion-accelerate: cubic-bezier(0.3, 0.0, 1.0, 1.0);
+
+  --duration-short: 150ms;
+  --duration-medium: 300ms;
+  --duration-long: 500ms;
+
+  /* Container Max Width */
+  --container-max-width: 1240px;
+  --header-height: 72px;
+}
